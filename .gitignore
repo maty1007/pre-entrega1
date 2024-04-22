@@ -1,0 +1,39 @@
+base_de_datos = {}
+
+def registro ():
+    nombre_usuario = input("Por favor ingrese un nombre de usuario: ")
+    if nombre_usuario in base_de_datos:
+        print(f"el usuario '{nombre_usuario}' ya se encuentra registrado. Por favor ingresa otro usuario." )
+        return True
+    contraseña = input("Por favor ingrese una contraseña: ")
+    base_de_datos [nombre_usuario] = contraseña
+    
+    print(f"¡Usuario {nombre_usuario} registrado correctamente!")
+
+
+
+def ingresar():
+    nombre_usuario = input("Ingresa tu nombre de usuario: ")
+    contraseña = input("Ingresa tu contraseña: ")
+    if nombre_usuario in base_de_datos and base_de_datos[nombre_usuario] == contraseña:
+        print(f"¡Bienvenido, {nombre_usuario}!")
+        
+    else:
+        print("Nombre de usuario o contraseña incorrectos. Por favor, inténtalo nuevamente.")
+        return True
+
+
+
+    while True:
+        print("seleccione una opcion \n1. Registrarse \n2. Iniciar sesión\n3. Salir")
+        choice = input("Ingresa tu elección: ")
+        if choice == "1":
+            registro()
+        elif choice == "2":
+            ingresar()
+        elif choice == "3":
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Opción inválida. Por favor, selecciona 1, 2 o 3.")
+
